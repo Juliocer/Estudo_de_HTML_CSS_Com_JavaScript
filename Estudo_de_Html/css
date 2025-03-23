@@ -1,0 +1,985 @@
+/*
+
+p {
+    color: #0000FF; > mudar a cor do texto 
+    font-size: 30px; > mudar o tamanho do texto 
+    font-weight: bold; > ele coloca todo o texto em negrito 
+    font-family: Helvetica; > e para mudar o tipo do texto como Arial, serif
+
+    text-align: left; > e para mudar o alinhamento do texto se vai ficar centralizado ou a esquerda e direita
+}
+
+a {
+    text-decoration: none; > e para tirar as decoração que vem com tag.  
+}
+
+a:hover{
+    text-decoration: underline; > e para quando vc colocar o mause em cima ele aparecer um animação em cima do texto
+}
+
+/*
+p {
+    color: #0000FF;                   cor do texto 
+    font-size: 30px;                  tamanho do texto 
+    font-family: 'Playwrite';         e o tesaine do texto 
+    text-align: left;                 centralizando o texto 
+    text-transform: lowercase;        transformação de texto: minúsculas
+    letter-spacing: 0px;              espaçamento entre a letras 
+    word-spacing: 0px;                espaçamento entre palavras
+    line-height: 5px;                 altura da linha
+    text-shadow: 0px 2px 3px #FF0000; sombra de texto
+}
+*/
+
+/* Table 
+
+
+
+table {
+    width: 600px;
+}
+
+table thead {
+    background-color: #ccc;
+}
+
+table tbody {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr:hover {
+    background-color: #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eee;
+}
+
+th {
+    font-weight: normal;
+}
+
+*/
+
+/* CSS do formulario
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 50px;
+    font-size: 17px;
+}
+
+label {
+    display: block;
+    margin-bottom:20px;
+}
+
+input[type=text], textarea, select {
+    padding: 10px;
+    width: 500px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    outline: 0;
+    margin-top: 5px;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+.termoslink{
+    color: #000;
+    text-decoration: none;
+}
+.termoslink:hover{
+    text-decoration: underline;
+}
+
+button {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+}
+button:hover{
+    background-color: #ddd;
+}
+*/
+
+/* Unidade de medida absoluta
+    px 
+    pt
+    in
+    cm > centimentro 
+*/
+
+/* Unidade de medida relativa
+
+    em
+    rem
+    %
+    ex
+    ch
+
+    vh 
+    vw 
+    vmin 
+    vmax
+    
+
+    em > depende do tamanho da fonte do elemento que vem antes dele
+    exemplo: 
+        h1{
+            font-size: 30px;
+        }
+
+        .container {
+            background-color: #FF0000;
+            color: #2c1313;
+            font-size: 3em;
+            width: 6em;
+        }
+
+    neste aqui o 
+        h1 e 30px,
+        o texto do .container e 90px e 
+        o width do .container e 120px
+
+        ele soma o 30px no font-size: 3em; ele soma 3*30=90.
+        e no width: 6em pelo fato de ele esta a baixo do fonte-size: 3em; ele pega o tamanho dele e soma
+            dando 90*6=540px.
+    
+    e muito usado em leyouts responsivos e flexíveis que os elementos tem que mudar de tamanho de acordo com
+        o tamanho da tela. 
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    rem > e a quase a mesma coisa so muda que ele seque o tamanho que vc colocu no HTML 
+        exemplo: 
+            html {
+                font-size: 10px;
+            }
+
+            body {
+                margin: 0;
+                font-size: 3rem;
+            }
+            h1{
+                font-size: 3rem;
+            }
+
+            .container {
+                background-color: #FF0000;
+                color: #2c1313;
+                font-size: 3rem;
+                width: 3rem;
+            }
+
+        neste exemplo o font-size: 3rem; do body, h1,container e o width eles tem o tamanho 30px.
+             3*10 > (do html)=30px
+        rem seque o tamanho do HTML  
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        % > porcentagem ela pega o tamanho da tela e aplica a porcentagem. 
+            exemplo:
+                .container {
+                    width: 50%;
+                    height: 400px;
+                    background-color: #999;
+                }
+
+                .container-interno {
+                    width: 50%;
+                    height: 50%;
+                    background-color: #333;
+                }
+            neste exemplo, na class container ela pega 50% da tela 
+                e no container-interno ela pega 50% da class container.
+
+        
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        
+        vh e vw e a mesma coisa que a porcentagen a diferença e que ela não depende do tamanho do pai dela 
+            da tag que ela esta dentro ela pega a dimenção da tela direto, quando vc coloca 50vh e 50 da tela.
+
+        exemplo: 
+            .container {
+                height: 50vh;
+                width: 50vw;
+                background-color: #999;
+            }
+
+        vmin e vmax eles pega o maximo do tamanho e o minimo do tamanho e mais para leyout responsivo
+            1vmin = 1% de 800px = 8px. 
+            1vmax = 1% de 1200px = 12px.
+            
+            ele se adapta a tela e o tamanho da tela para não fica uma tag muito grande em uma tela pequena 
+                e nem muito pequeno.
+*/
+
+/* Editar o tamanho da imagem
+
+o object-fit tem tres formato o fill a imagem origonal o cover corta a imagen e pega todo o espaço
+    e o contatiner ele coloca a imagen no meio do container se a imagem for menor que o container ele 
+    deixa o resto do espaço em branco.
+
+img {
+   width: 700px;
+   height: 200px;
+   object-fit: contain;
+}
+
+*/
+
+/* @media
+
+    media e tipo um if tem o parence () vc coloca a regra para entra no parentece se entra ela entra 
+        se não pasa direto, e mais usando para tela responsiva para se adapte a diferentes telas e dispositivos.
+
+        neste exemplo quando a tela e menor que 600px ele muda o background do body e o tamanho da letra do h1.
+        exemplo:
+        body {
+            margin: 0;
+            background-color: #0f0;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                background-color: #f00;
+            }
+            h1 {
+                font-size: 15px;
+            }
+        }
+
+        Neste outro exemplo e colocado uma função para quando imprimir, quando vc for imprimir não vai aparecer 
+            as bordas na tabela.
+        e usado o only print{} para colocar este função na ora que for imprimir
+
+        exemplo: 
+        table, td {
+            border: 2px solid #000;
+            width: 600px;
+
+        }
+
+        @media only print{
+            h1{
+                font-size: 15px;
+                font-weight: normal;
+            }
+
+            table, td {
+                border: 0;
+            }
+        }
+        
+        Também tem neste exemplo que vc tira o h1 de quando for imprimir vc coloca o display: none;
+        exemplo:
+        @media only print {
+            h1{
+                display: none;
+            }
+        }
+*/
+
+/*@media+
+    
+    @media(orientation: landscape){} dispositivo está na orientação horizontal
+    @media(orientation: portrait){} dispositivo está na orientação vertical
+    @media(aspect-ratio: 1/1){} 600x600 
+
+
+    Neste exemplo o @media pega a posição da tela se ela e horizontal ou vertical se for horizontal 
+        coloque toda as div serão organizadas em linha, e se estiver no vertical coloque as div em coluna.
+    Ele pega a posição da tela com a função orientation: landscape para pegar o horizontal e o 
+        vertical e orientation: portrait vc coloca ele dentro do @media( )
+
+        neste codigo e usado o display flex no body dentro da @media colocando em coluna é em linha.
+
+    Exemnplo:
+        body {
+            display: flex;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #000;
+            margin: 4x;
+        }
+
+        @media (orientation: landscape) {
+            body {
+                flex-direction: row;
+            }
+        }
+
+        @media (orientation: portrait) {
+            body {
+                flex-direction: column;
+            }
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        Neste exemplo o @media pela o tamanho da tela pela media um para ( 1/1 = 600px/600px ) mas ele também pode 
+            pegar a medida de 2/4 que e 200px/400px se bater esta medida entra no @media e asiona a função de muda
+            a cor do background-color.
+        Exemplo:
+            @media (aspect-ratio: 1/1) {
+                body{
+                    background-color: #f00;
+                }
+            }
+
+            @media (aspect-ratio: 4/2) {
+                body{
+                    background-color: #00f;
+                }
+            }
+*/
+
+/* var
+
+    Estamos usando o var para pegar a variavel do root e coloca nas tag para ficar tudo padronizado.
+    o root e para declara variaveis no css globais que pode ser subrescrito.
+
+        Exemplo:
+        :root {
+            --bg-color: #000;
+            --bg-second: #444;
+            --font-color: #fff;
+        }
+
+        body{
+            background-color: var(--bg-color);
+        }
+
+        h1{
+            color: var(--font-color);
+        }
+
+        .container{
+            background-color: var(--bg-second);
+            color: var(--font-color);
+        }
+
+                Usando o @media com root 
+
+    neste exemplo o media determina que se a tela for menor que 450px ele pegei o tamanho definifo no root
+        --font-size: 25px e abaixe o tamanho para --font-size: 15px.
+
+    Ele esta mudando o tamanho do texto com forme o tamanho da tela. 
+
+        Exemplo:
+        :root {
+            --bg-color: #000;
+            --bg-second: #444;
+            --font-color: #fff;
+            --font-size: 25px;
+        }
+
+        body{
+            background-color: var(--bg-color);
+            font-size: var(--font-size);
+        }
+
+        h1{
+            color: var(--font-color);
+        }
+
+        .container{
+            background-color: var(--bg-second);
+            color: var(--font-color);
+        }
+
+        @media (max-width: 450px){
+            :root {
+                --font-size: 15px;
+            }
+        }
+
+*/
+
+/*editando um video
+    .video{
+    width: 600px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.video-area{
+    position: relative;
+    height: 0px;
+    background-color: #ccc;
+    padding: 0px 0px 56.25%;
+}
+
+.video-area iframe{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+}
+*/
+
+/* width: min(); e width: max();
+
+    E muito usado em telas responsivas para adaptar o tamanho das tag a tela.
+
+        width: max(50%, 300px);
+            Aqui, o valor 300px é fixo e funciona como um limite mínimo para a largura do elemento. 
+            Ele garante que a largura nunca será menor que 300px, mesmo se a tela for muito estreita.
+
+        width: min(50%, 300px);
+            O valor 300px também é fixo, mas funciona como um limite máximo para a largura do elemento. 
+            Ele garante que a largura nunca será maior que 300px, mesmo se a tela for muito grande.
+
+    Como funciona o max ele coloca um limite para o tamanho da tag ela nunca vai passar de 300px. 
+        e o min ele coloca um limitador para a tag nunca for menor que 300px. 
+
+    O 50% ele medi o tamanho da tela ele pega 50% do tamanho da tela, exemplo: 50% de 500px = 250px, 
+        se o tamanho for menor que so 300px que vc deixou fixo o tamanho da tag relativa a o tamanho
+        da tela, ele se adapta a o tamanho da tela.
+
+    Mas se o tamanho da tela for maior exemplo: 50% de 800px = 400px, se a tela for maior que 300px
+        ele deixa fixo o tamanho que vc colocou na tag. 
+*/
+
+/* width: calc(100% - 20px);
+
+    width: calc(100% - 20px);
+
+    calc ele e usado para calcular a largura de uma tag neste exemplo: ele pego 100% da largura da 
+        tela e retirol 20px isso e bom porque se vc diminuir a tela ele vai manter aqueles -20px. 
+*/
+
+/* border
+    coloca uma borda fazendo curva em diferentes lados 
+
+    border-radius: 10px; coloca em todos os lados
+
+    border-top-left-radius: 10px; em cima lado esquerdo 
+    border-top-right-radius: 10px; em cima lado direito
+
+    border-bottom-left-radius: 10px; em baixo lado esquerdo
+    border-bottom-right-radius: 10px; em baixo lado direito
+
+*/
+
+/* Degrader de cores na tela
+
+    background: linear-gradient(); ele cria uma transição suave entre duas ou mais cores ao longo 
+        de uma linha reta de cima para baixo ou inverso também tem o 45deg que vc pode colocar para
+        definir de unde se inicia as cores.
+
+        background: linear-gradient([direção ou ângulo], [cores e paradas de cor]);
+
+    A direção define o caminho do gradiente:
+        to bottom (padrão): Gradiente vai de cima para baixo.
+        to right: Gradiente vai da esquerda para a direita.
+        to bottom right: Gradiente vai diagonalmente do canto superior esquerdo para o inferior direito.
+
+    Ângulos como 45deg ou 135deg: Criam gradientes em ângulos específicos.
+        0deg: De baixo para cima.
+        90deg: Da esquerda para a direita
+
+    neste exemplo ele coloca um degrader de cor branca em cima e azul em baixo.
+    background: linear-gradient(white, blue);
+*/
+
+/* Animação
+
+    Vamos falar da tag @keyframes ela permite fazer uma animação com sua tag.
+
+        como funciona, vou usar um exemplo aqui para entender melhor. 
+
+        Neste exemplo vc coloca o @keyframes e seleciona o clas da tag exemplo vc pode usar um id também.
+        a porcentagem e referente a o tempo que vc colocu na duração da animação neste exemplo foi colocado 4s. 
+            0% → 25%: 25% do tempo total é usado para ir de 0px para 100px.
+            25% → 50%: 25% do tempo total é usado para ir de 100px para 200px.
+            50% → 75%: 25% do tempo total é usado para voltar de 200px para 100px.
+            75% → 100%: 25% do tempo total é usado para voltar de 100px para 0px.
+        
+        0% {background-color: red;top:0;left:0;} dentro das chaves vc coloca a animação qua vc quer, 
+            em relação a tag mudar a cor para o red e mudar a posição dele no 0% continua na mesma posição
+            no 25% ele vai para a direita, no 50% o top vai para baixo, 75% ele vai para esquerda e 
+            100% ele vai para cima.
+
+            como e que funciona o top, left, bootom, right.
+                top → Move para baixo com valores positivos e para cima com valores negativos.
+                left → Move para a direita com valores positivos e para a esquerda com valores negativos. 
+                bottom → Move para cima com valores positivos e para baixo com valores negativos.
+                right → Move para a esquerda com valores positivos e para a direita com valores negativos. 
+
+        dentro da clas alem de vc definir width: 150px, height: 150px, background-color: green como base, 
+            para animação vc define o nome da class, id ou ate o proprio nome da tag animation-name:exemplo;
+            no animation-duration: 4s; vc define o duração da animação, animation-delay: 2s; 
+            e animation-iteration-count: infinite; neste ele vai repetir varias vezes vc pode colocar numero.
+
+            Mas vc pode definir tudo junto como neste exemplo a baixo
+
+                animation: exemplo 2s infinite ease-in-out;
+
+                    Nome da animação (exemplo): o que será animado.
+                    Duração (4s ou outro): quanto tempo leva.
+                    Repetição (infinite ou número): quantas vezes acontece.
+                    Função de temporização (ease-in-out ou outro): como o movimento ocorre. 
+
+                        vc pode colocar também no ease-in-out
+                            ease: movimento natural, começa devagar, acelera no meio, e desacelera no final.
+                            ease-in: começa devagar e acelera.
+                            ease-out: começa rápido e desacelera.
+                            ease-in-out: começa devagar, acelera no meio e desacelera no final.
+
+    Exemplo 1:
+        @keyframes exemplo{
+            0% {background-color: red;top:0;left:0;}
+            25% {background-color: yellow;top:0;left:200px;}
+            50% {background-color: blue;top:200px;left:200px;}
+            75% {background-color: green;top:200px;left:0;}
+            100% {background-color: red;top:0;left:0;}
+        }
+
+
+        body{
+            margin: 0;
+        }
+
+        .exemplo {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            position:absolute;
+            animation-name:exemplo;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        
+    segundo exemplo usando o style e direto do HTML 
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+            }
+
+            .ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            animation: bounce 1s infinite ease-in-out;
+            }
+        </style>
+        </head>
+        <body>
+        <div class="ball"></div>
+        </body>
+        </html>
+
+
+*/
+
+/* Adicionando Sombra na tag ou no texto 
+
+    O estilo box-shadow no CSS adiciona uma sombra ao redor de um elemento.
+    
+    neste exemplo: 
+    box-shadow: 10px 10px 5px #888;
+
+    no primeiro 10px (deslocamento a sobra para a direita)
+        Este é o deslocamento horizontal da sombra.
+        Um valor positivo desloca a sombra para a direita.
+        Um valor negativo desloca a sombra para a esquerda.
+
+    no segundo 10px (deslocamento a sombra para baixo)
+        Este é o deslocamento vertical da sombra.
+        Um valor positivo desloca a sombra para baixo.
+        Um valor negativo desloca a sombra para cima.
+
+    5px (raio de desfoque)
+        Define o desfoque da sombra.
+        Valores maiores deixam a sombra mais difusa.
+        Valores menores deixam a sombra mais nítida.
+        Um valor de 0 significa que a sombra será completamente sólida, sem desfoque.
+
+    #888 (cor da sombra)
+        Define a cor da sombra.
+        No exemplo, #888 é um tom de cinza.
+
+
+    Explicação do exemplo:
+    
+        box-shadow: 10px 10px 5px #888;
+
+            10px horizontal → A sombra será deslocada 10px para a direita.
+            10px vertical → A sombra será deslocada 10px para baixo.
+            5px desfoque → A sombra terá um leve desfoque, criando um efeito suave.
+            #888 → A cor da sombra será um cinza médio.
+
+*/
+
+/* Adicionado uma transição na tag 
+
+    Quando vc coloca um hover na tag vc pode colocar um transition para colocar mudança mas lenta 
+        um controle na transição que vc colocar na cor no tamanho da tag ou texto. 
+        
+    exemplo: transition:all 1s linear;
+
+    all > significa que todas as propriedades que podem ser animadas serão afetadas pela transição.
+    1s > Este é o tempo que a transição leva para ser concluída. No exemplo, a transição leva 1 segundo.
+    linear > Define o ritmo da transição. 
+        Com linear, a mudança acontece em uma velocidade constante do início ao fim.
+            Outras opções incluem:
+                ease: Começa devagar, acelera no meio e desacelera no final.
+                ease-in: Começa devagar e acelera.
+                ease-out: Começa rápido e desacelera.
+                ease-in-out: Começa devagar, acelera no meio e desacelera no final.
+
+*/
+
+/* motor de renderização 
+
+    motor de renderização (ou "engine") usado por navegadores para processar 
+        e exibir o conteúdo de páginas da web. Ele interpreta HTML, CSS, JavaScript 
+        e outros recursos, transformando-os em algo que o usuário vê e interage na tela.
+
+        temos alguns motores sendo usados hoje em dia como: 
+            Blink: Motor de renderização desenvolvido pelo Google.
+                que e usado pelos navegadores Google Chrome, Microsoft Edge (versões modernas), 
+                Opera (versões modernas), Brave, Vivaldi. 
+            WebKit:  Motor de renderização originalmente desenvolvido pela Apple e usado 
+                principalmente no Safari e navegadores em dispositivos iOS.
+            Gecko: Motor de renderização desenvolvido pela Mozilla.
+                Usado por: Mozilla Firefox, Tor Browser.
+
+*/
+
+/*Coloca para quebra o texto quanto o texto for maior que a tag
+
+    word-wrap: break-word;
+
+    exemplo: 
+        .exemplo {
+        width: 150px;
+        height: 200px;
+        border: 1px solid #000000;
+        word-wrap: break-word;
+    }
+*/
+
+/* Flexbox display: flex;, Flex-direction, flex: 1;
+
+    O Flexbox ele e ideau para alinhar, distribuir e organizar elementos dentro de um conatiner, 
+        tanto na horizontal e qaunto na vertical. 
+
+        display: flex; ele ativa o flexbox em um container. e por padrão ele organizar as dives em linha.
+        Flex-direction define a direção dos itens: 
+            Flex-direction: row; padrão alinha as div em linha da esquerda para a direita. 
+            Flex-direction: row-reverse; alinha as div em linha da direita para esqurda. 
+            Flex-direction: column; Alinha em uma coluna de cima para baixo. 
+            Flex-direction: colum-reverse; Alinha em uma coluna de baixo para cima. 
+        
+        flex: 1; faz o item flexível ajustar seu tamanho proporcionalmente em relação aos outros itens no contêiner. 
+
+            Exemplo Prático:
+                <div class="container">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+
+           
+                .container {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                .item {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 10px;
+                    margin: 5px;
+                }
+            
+            Neste exemplo:
+                Todos os itens .item crescem igualmente para dividir o espaço restante no contêiner.
+                Se o container tiver largura de 900px, cada item terá 300px (900px dividindo por 3 itens).
+            
+            
+            Exemplo com Itens de Tamanhos Diferentes
+
+                <div class="container">
+                    <div class="item" style="flex: 1;">1</div>
+                    <div class="item" style="flex: 2;">2</div>
+                    <div class="item" style="flex: 3;">3</div>
+                </div>
+            
+            Neste caso se o contêiner tiver 600px de largura:
+                O item 1 terá 100px.
+                O item 2 terá 200px.
+                O item 3 terá 300px.
+            
+            se tivese só dois o item, o item 1 ia tem 200px e o item 2 ia tem 400px, o item 2 vai sempre ter 
+                    o dobro do item 1
+            
+*/
+
+/* Flexbox justify-content, align-items, flex-wrap, 
+
+    Resumo: 
+        justify-content → controla o alinhamento na linha (horizontal por padrão).
+        align-items → controla o alinhamento na coluna (vertical por padrão).
+        flex-wrap → controlar a quebra de linha
+
+    justify-content ele organiza os itens na linha, quando esta no Flex-direction: row;
+        flex-start: alinha todas a div a esquerda padrão. 
+        flex-end: Alinha as div na direita.
+        center: Centralizados.
+        space-between: Espaço igual entre os itens.
+        space-around: Espaço igual ao redor dos itens.
+
+    align-items ele organiza os itens na coluna, quando esta no Flex-direction: column;
+        stretch (padrão): Os itens esticam para preencher o contêiner.
+        flex-start: Alinhados ao início a esquerda.
+        flex-end: Alinhados ao final a direita.
+        center: Centralizados.
+        baseline: Alinhados pela linha de base do texto.
+
+    flex-wrap ele quebra a linha de acordo com o tamanho do container e os itens. 
+        se o container não suportar os itens em uma so linha ele quebra a linha 
+        colocando todos os outro itens na linha de baixo.
+    
+        nowrap (padrão): Não permite a quebra de linha.
+        wrap: Quebra os itens em várias linhas se necessário da esquerda para direita.
+        wrap-reverse: Quebra os itens em várias linhas na ordem inversa da direita para esquerda.
+*/
+
+/* Flexbox align-content, order 
+
+    align-content É usado para controlar o espaçamento entre as linhas 
+        de um container flex (somente quando há múltiplas linhas no Flexbox, 
+        ou seja, quando flex-wrap está habilitado).
+
+        Valores principais:
+    flex-start: As linhas se alinham no início do container.
+    flex-end: As linhas se alinham no final do container.
+    center: As linhas se alinham no centro verticalmente.
+    space-between: As linhas têm o maior espaçamento possível entre elas.
+    space-around: As linhas têm espaçamento igual em torno delas.
+    stretch (padrão): As linhas se esticam para ocupar todo o espaço disponível.
+
+    order define a ordem em que os itens individuais aparecem no layout, 
+        independentemente da ordem deles no HTML.
+
+        Valores principais:
+    0 (padrão): Todos os itens têm prioridade igual.
+    Números positivos: Quanto maior o valor, mais por ultimo ele fica. 
+    Números negativos: Quanto menor o valor, mais na frente ele fica. 
+*/
+
+/* Selecionar atributos 
+
+    da para selecionar atributos e motificar ele no css 
+
+    exemplo: 
+        hmtl:
+            <input type="text" name="usuario" required>
+
+            <input type="password" name="senha">
+        
+
+            no css e só fucho o requerid dentro do [].
+        no CSS:
+            [required] {
+                backgroud-color:#FF0;
+            }
+        
+    vc conseque modificar links especificos colocando assim, a[href*="futebol"]{backgroud-color:#00f} todos os 
+        links que estiverem com a palavra fotebol ele vai modificar a cor de fundo. 
+
+        exemplo: 
+            no CSS:
+                a[href*="futebol"]{
+                    backgroud-color:#00f
+                }
+
+            HTML:
+                <a href="https://ge.globo.com/ba/futebol/times/vitoria/">Vitoria</a>
+
+    vc conseque selecionar os links que vai fica em cima e em baixo.
+
+     os links de cima vc coloca ^= 
+        a[href ^="futebol" ]{backgroud-color:#00f} 
+
+     os de baixo $=
+        a[href $="futebol" ]{backgroud-color:#00f}
+
+    para selecionar todos que esta aparecendo a palavra especifica que vc colocar.
+        *=
+            a[href *="futebol" ]{backgroud-color:#00f}
+*/
+
+/* Editor de texto seleciona a primeira letra e linha
+
+    ::first-letter, ::first-line
+
+    ::first-letter ele seleciona a primeira letra do texto.
+        exemplo: 
+            p::first-letter{} 
+
+    ::first-line ele seleciona a primeira linha do texto.
+        exemplo:
+            p::first-line{}
+
+*/
+
+/* Seltor Editar a primeira div e a ultima sem mecher nas outra divs
+
+    :first-child
+    :last-child
+
+    div:first-child ele vai mexer na div de cima, na primeira div.
+        exemplo:
+            HTML:
+                div{
+                    div{}
+                    div{}
+                    div{}
+                }
+            CSS:
+                div:first-child{}
+
+    div:last-child ele vai mexer na div de baixo, na ultima div.
+        exemplo:
+            HMTL:
+                div{
+                    div{}
+                    div{}
+                    div{}
+                }
+            CSS:
+                div:last-child{}
+*/
+
+/* Seletor Negativo ele nega o uso de uma tag especifica
+
+    no exemplo da para explicar.
+        Exemplo:
+            HTML:
+                <h5>\sdasvlkmdtlj vhgblç</h5>
+                <p>
+                    A escolha do seletor adequado depende da estrutura do HTML e do nível de
+                    especificidade desejado.
+                </p>
+                <h5>\sdasvlkmdtlj vhgblç</h5>
+                <p>
+                    A escolha do seletor adequado depende da estrutura do HTML e do nível de
+                    especificidade desejado.
+                </p>
+            CSS:
+                body :not(p){
+                    background-color: red;
+                }
+
+    neste exemplo ele seleciona todas as tags mas retira o <body> e o <p>, ele só coloca o
+        background-color: red; no <h5>.
+
+    O not em inglês e não, ele nega o p, e colocando o body no começo vc nega ele também.
+
+*/
+
+/* Seletor nth permite selecionar elementos de acordo com sua posição
+
+    Exemplo: 
+        HTML:
+            <div>texto 1</div>
+            <div>texto 2</div>
+            <div>texto 3</div>
+            <div>texto 4</div>
+            <div>texto 5</div>
+        CSS: 
+            div:nth-child(2) {
+                background-color: red;
+            }
+
+            div:nth-last-child(3){
+                background-color: blue;
+            }
+    
+    Ele seleciona a linha e aplica o background-color: red; 
+
+        neste ele seleciona de cima para baixo, dependendo do numero que vc colocar 
+            neste exemplo ele seleciono a linha 2. 
+                div:nth-child(2) {
+                    background-color: red;
+                }
+
+        neste exemplo seleciona de baixo para cima.
+            div:nth-last-child(3){
+                background-color: blue;
+            }
+
+*/
+
+/* Seletor ::before e ::after adiciona conteudo na frente e no fim da tag
+
+    Exemplo: 
+        HTML: 
+            <span>Text 1</span>
+        CSS: 
+            span::before {
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-color: red;
+            }
+            span::after {
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-color: blue;
+            }
+    neste exemplo que adiciono um quadrado na frente e atras da tag span. 
+    E obrigatorio colocar o content dentro dele vc coloca o conteudo que vc quer coloca.
+*/
+
+/* Transparencia usando background-color:rgba(255, 0, 0, 0.4);
+
+        background-color:rgba(255, 0, 0, 0.4); 
+    neste exemplo rgb tem um a no final este a representa a transparencia da cor e 
+     o 0.4 representa a porcentagem da transparencia. 
+
+*/
+
+

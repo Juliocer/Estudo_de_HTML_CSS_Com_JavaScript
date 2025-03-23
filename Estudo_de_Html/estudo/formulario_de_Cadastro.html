@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de cadastro</title>
+    <Link rel="stylesheet" href="formulario_de_cadastro_styles.css"/>
+</head>
+<body>
+    
+    <h1>Formulario de Cadastro para DEVS </h1>
+
+    <div>
+        <label for="nome">Digite seu nome: </label> <br>
+        <input type="text" name="nome" id="nome">
+    </div>
+
+    <div>
+        <label for="idade">Digite seu Idade: </label> <br>
+        <input type="text" name="idade" id="idade">
+    </div>
+
+    <div>
+        <label for="tecnologia">Selecione as técninologias que vc usa: </label>
+        <div class="selecioneAsTecnologia">
+            <label for="java" class="nomeDaTecnologia">Java</label>
+            <input type="checkbox" name="Java" id="java">
+            <label for="javascript" class="nomeDaTecnologia">JavaScript</label>
+            <input type="checkbox" name="javascript" id="javascript">
+        </div>
+    </div>
+
+    <div>
+        <label for="nivel">Selecione seu nivel na Programação </label>
+        <select name="nivel" id="nivel">
+            <option value="">Selecione</option>
+            <option value="junio">Junio</option>
+            <option value="senio">Senio</option>
+            <option value="pleno">Pleno</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="experiencia">Informe sobre sua experiencia:</label> <br>
+        <textarea name="experiencia" id="experiencia" placeholder="Informe sobre sua experiencia"></textarea>
+    </div>
+
+    <div class="butoes">
+        <button type="submit" >Enviar</button> 
+        <button type="reset" >Limpa o Formulario</button>
+    </div>
+
+</body>
+</html>

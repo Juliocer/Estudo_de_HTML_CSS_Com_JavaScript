@@ -1,0 +1,781 @@
+<body>
+br > pula linha 
+b > coloca em negrito sem relevancia
+strong > coloca em negrito com relevancia
+i > coloca coloca em italico sem relevancia
+em > coloca em italico com relevancia
+
+small > ela diminui o tamanho do texto 
+
+del > ela risca o texto, ela coloca um risco em cima do texto. 
+mark > e um marca texto ele coloca um backgorud amarelo no texto como se fosse um marca texto
+
+sup > coloca um o em cima do texto 
+sub > coloca em baixo
+
+<!-- --> = adiciona um comentario
+</body>
+
+<body Lista>
+<!-- Lista --> 
+
+    <ul>
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+    </ul>
+
+    <ol>
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+    </ol>
+
+    <ul style="list-style-type: circle;">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+    </ul>
+
+    <ol type="a">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+    </ol>
+
+    <ol start="45">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+    </ol>
+
+    <ul>
+        <li>Café</li>
+        <li>
+            Chá
+            <ul>
+                <li>Chá Verde</li>
+                <ul>
+                    <li>Tipo 1</li>
+                    <li>Tipo 2</li>
+                </ul>
+                <li>Chá Preto</li>
+            </ul>
+        </li>
+        <li>Leite</li>
+    </ul>
+
+    <ul>
+        <li></li>
+    </ul>
+</body>
+
+<body Tabela>
+<!-- Tabela -->
+
+    <table><!-- Abrir um tag tabela -->
+
+        <tr> <!-- Abrir uma linha  na tabela -->
+
+            <th></th> <!-- Abrir um cabeçalho da coluna -->
+
+        </tr>
+
+        <tr>
+
+            <td></td> <!-- Conteudo da coluna -->
+
+        </tr>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item 1</th>
+                <th>Item 2</th>
+                <th>Item 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Area de cadastro</h1>
+        <form action="paginas/login.html" method="post">
+
+        <input type="text" name="usuario"> 
+        <input type="submit">
+    <!--
+        tipos de checkbox vai aparecer um quadradinho para vc marca
+        tipos de submit vai aparecer um botao de envio 
+        tipos de email vai deixar formatado para recerber só e-mal
+        tipos de password não vai parecer as letras que vc esta digitando
+        tipos de text não e uma caixa de texto que vc pode escrever um texto dentro
+    -->
+        </form>
+    <h1>Area de login</h1>
+        <form action="">
+
+        </form>
+</body>
+
+<body TIPOS DE INPUT AVANÇADO>
+        <!--TIPOS DE INPUT > Isso e muito inportante e muito bom
+
+        Textos e números: text, number, email, password, tel, url, search.
+        Datas e horários: date, time, datetime-local, month, week.
+        Seleções: checkbox, radio, color, range.
+        Botões e ações: submit, reset, button, image.
+        Upload e campos ocultos: file, hidden.
+        -->
+        1.<!-- todos se escreve assim dentro do input menos o radio e os botões -->
+
+            <input type="text" name="usuario" placeholder="Digite seu nome">
+
+        2.<!-- Os BOTÕES só vai mudar mesmos e o value e vocês vai decidir o nome do botão -->
+
+            <input type="submit" value="Enviar">
+
+        3.<!-- o radio ele se escreve assim  -->
+
+            <!-- O radio em HTML é usado para criar botões de opção onde o usuário pode selecionar apenas 
+            uma opção entre várias disponíveis. Diferente do checkbox, que permite múltiplas seleções, o 
+            radio limita a escolha a uma única opção dentro de um mesmo grupo. 
+
+            Estrutura Básica:
+            type="radio" define o input como um botão de rádio.
+            name: agrupa os botões, ou seja, botões com o mesmo nome fazem parte do mesmo grupo e
+            permitem uma única seleção.
+            value: é o valor que será enviado para o servidor quando o botão for selecionado.
+            -->
+            <form>
+                <p>Escolha seu gênero:</p>
+                <input type="radio" id="masculino" name="genero" value="masculino">
+                <label for="masculino">Masculino</label><br>
+        
+                <input type="radio" id="feminino" name="genero" value="feminino">
+                <label for="feminino">Feminino</label><br>
+        
+                <input type="radio" id="outro" name="genero" value="outro">
+                <label for="outro">Outro</label>
+            </form>
+</body>
+
+<body Select>
+    <!-- Select e muito bom gostei estava procurando quando estava fazer o TCC -->
+
+        <!-- SELECT ele abrir um aba para vc selecionar e simples
+             o SIZE e deixa vc ver mais de uma opção de vez de uma de cada vez 
+             o MULTIPLE deixa vc selecionar mais de uma opção segura no contra e sai delecionando
+             e o OPTION vc coloca as opções para o usuario selecionar
+             o VALUE e a verdadeiro valor da opção que vc esta selecionando 
+        -->
+
+        <select name="Ordenacao" id="" size="2" multiple>
+            <option value=""></option>
+            <option value="bestseller">Mais vendidos</option>
+            <option value="last" selected>Resentes</option>
+        </select>
+</body>
+
+<body Textarea>
+    <!-- Visualmente o Textarea e para vc digitar um texto extenso grande
+      ai ele vai se adaptando com forme o seu texto
+      ele da espaço vc conseque pular linha 
+      conseque fazer um texto bem organizado e extenso
+      
+      Como se escreve 
+
+      <textarea name="textoGrande" id="" placeholder="Digite um texto grande" ></textarea>
+        
+        ele abre e fecha = <textarea ></textarea>
+        vc pode colocar um id normal mente = id=""
+        pode colocar um placeholder para o usuario ver o texto que vc colocou = placeholder="Digite um texto grande"
+
+      -->
+
+            <textarea name="" id="" placeholder="" ></textarea>
+</body>
+
+<body Button>
+    <!-- Button e um botão este e bem simples e simples mente o e direto um Butão 
+    
+        <button> eu sou um butão</button>
+
+    e uma tag que fecha e abre = <button></button>
+    -->
+
+    <button></button>
+</body>
+
+<body Label>
+    <!-- Label e para vc colocar um texto na tela informando ou falando o que vc tem que fazer
+     
+    exemplo: 
+                        <input type="text" name="nome" id="nome">
+                        <label for="nome">Texto maior grande</label>
+
+        neste exemplo vc tem um label e um input um do lado do outro o label esta informando para vc colocar o 
+        seu nome no input
+
+        * Como e escrito
+
+        Ele e uma tag que e fechada = <label></label> 
+        Ele tem o for ele vincula o label ao input quando vc clica no texto do label ele vai para o input
+            vc có tem que colocar o input dentro do for desta = forma for="nome",
+        Mas tem outra forma de fazer este vinculo do for que e desta forma.
+                        <label>
+                            Nome Completo: <br>
+                            <input type="text" name="nome">
+                        </label>
+            colocando o input dentro da label
+    -->
+</body>
+
+<body um formulario>
+    <h1>Página de teste</h1>
+
+    <h1>Area de cadastro</h1>
+    <form action="paginas/login.html" method="get">
+
+        <label>
+            Nome Completo: <br>
+            <input type="text" name="nome">
+        </label>
+        <label>
+            Descrição: <br>
+            <textarea name="descrição" id=""></textarea>
+        </label> 
+
+        <label for="">
+            Categoria: <br>
+            <select name="categoria" id="">
+                <option value="">categoria 1</option>
+                <option value="">categoria 2</option>
+                <option value="">categoria 3</option>
+                <option value="">categoria 5</option>
+            </select>
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Eu declaro que li e aceito os <a href="paginas/termos.html" target="_blank" class="termoslink">Termo de uso</a>
+        </label>
+
+
+        <button>Fazer Cadastro</button>
+    
+    </form>
+
+    <h1>Area de login</h1>
+    <form action="">
+
+    </form>
+</body>
+
+<body Fieldset e Legend >
+    <!-- e para agrupar visualmente os elementos dentro do formulario vc também pode colocar uma legenda 
+        tipo um titulo do grupo. 
+        
+        Neste exemplo a baixo deixa bem claro como fica no codigo os grupos e a legenda.
+        tem dois grupos Dados Pessoais e Dados da Empresa. 
+    -->
+
+
+    <!-- Exemplo -->
+        <form method="post">
+
+            <fieldset>
+                <legend>Dados Pessoas</legend>
+                <label>
+                    Nome Completo: 
+                    <input type="text" name="name">
+                </label>
+                <br>
+                <label>
+                    Sobrenome:
+                    <input type="text" name="Sobrenome">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dados da Empresa</legend>
+                <label>
+                    Nome da empresa:
+                    <input type="text" nome="Nome da empresa">
+                </label>
+                <br>
+                <label>
+                    Cargo na empresa:
+                    <input type="text" name="Cargo na empresa">
+                </label>
+            </fieldset>
+
+        </form>
+</body>
+
+<body para texto = required minlength="3" maxlength="4" || para numero = min="" max="" step="">
+    <!-- e para colocar regras a o preencher o formulario 
+            Para o texto
+            o required e deixa o campo input obrigatorio e obrigatorio o preenchimento não pode deixa vazio. 
+            o minlength ele decreta o minimo de letras e numero para ser enviado o formulario  
+            o maxlength ele decreta o maximo de letras que pode ser digitado no input 
+            
+            Neste exemplo ele coloca que e obrigatorio o preenchimento e o minimo de caracteris e 3 e o maximo e 4.
+            ele coloca estas ordens dentro do input. 
+
+                Exemplo:
+                    <form method="post">
+
+                        <fieldset>
+                            <legend>Dados Pessoas</legend>
+                            <label>
+                                Nome Completo: <br>
+                                <input type="text" name="name" required minlength="3" maxlength="4">
+                            </label>
+                            <br>
+                            <label>
+                                Sobrenome: <br>
+                                <input type="text" name="Sobrenome" required minlength="3" maxlength="4">
+                            </label>
+                        </fieldset>
+
+                    </form>
+
+        Para o Numero
+            o required e deixa o campo input obrigatorio e obrigatorio o preenchimento não pode deixa vazio. 
+            o min ele decreta o minimo de Numero para ser enviado o formulario  
+            o max ele decreta o maximo de Numero que pode ser digitado no input 
+            
+            Neste exemplo ele coloca que e obrigatorio o preenchimento e o minimo de Numero e 3 e o maximo e 4.
+            ele coloca estas ordens dentro do input. 
+
+                <label>
+                    Idade: <br>
+                    <input type="number" name="idade" required min="3" max="4">
+                </label>
+            -->
+</body>
+
+<body Fazer um envio de uma imagen ou arquivo>
+    <!-- com um typo de input o file vc conseque fazer um envio de uma imagen ou arquivo
+            Accept para decreta o tipo de arquivo que pode ser enviado ou vc pode 
+                colocar image/* para deixa já pre selecionado o arquivo.
+            Enctype vc coloca no formulario para conprimir o arquivo para ser enviado
+    
+    neste exemplo ele seleciona o typo="file" coloca o accept ele já esta pre celecionando as imagens e 
+        o enctype para comprimir o arquivo para ser enviado. 
+    Exemplo:
+    -->
+    <form method="post" enctype="multipart/form-data">
+    <label>
+        Foto: <br>
+        <input type="file" name="arquivo" accept="image/*">
+    </label>
+    </form>
+</body>
+
+<body>
+    <!-- A tag picture e utilizado para coloca uma imagen responsiva e especifica para cada tipo de tela 
+        ou condição, como pixels e ou tamanho.
+        
+        A tag source ela espesifica a imagen que vai ser utilizada de acordo com o tamanho da tela
+            dentro dela tem a Srcset e para vc coloca a imagen e a Media para vc definir o tamanho da tela
+            que vai aparecer a imagen.  
+    -->
+
+    exemplo:
+        <picture>
+            <source media="(min-width: )" srcset="">
+            <source media="(min-width: )" srcset="">
+            <img src="./imagens/Sem título.jpg" alt="">
+        </picture>
+</body>
+
+<body adicionando um video>
+<!-- 
+    <iframe src="" frameborder="0"></iframe>
+    <video src=""></video>
+
+    Use <video> se:
+        Você deseja exibir vídeos locais ou hospedados diretamente no servidor.
+        Precisa de mais controle direto sobre a reprodução e comportamento do vídeo.
+
+    Use <iframe> se:
+        Você precisa incorporar vídeos de plataformas externas, como YouTube e outras plataformas.
+        Precisa adicionar conteúdos que não sejam vídeos, como mapas ou páginas da web.
+
+
+    <iframe> ele  permite incorporar conteúdo externo como videos, página da web, dentro da pagina do saite. 
+        exemplo: video, google maps, videos do youtube. 
+    
+
+        exemplo: youtube
+
+        <div class="video">
+            <div class="video-area">
+                <iframe 
+                    src="https://www.youtube.com/" >
+                </iframe>
+            </div>
+        </div>
+
+
+        exemplo: video
+
+        <div class="video">
+            <div class="video-area">
+                <iframe 
+                    src="./video/WIN_20211227_16_41_20_Pro.mp4" >
+                </iframe>
+            </div>
+        </div>
+
+        exemplo: Google Maps
+
+        <div class="video">
+            <div class="video-area">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31109.329238193313!2d-38.51086256887472!3d-12.929165589071719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7160fff54d1078b%3A0xc265c27e17339076!2sPra%C3%A7a%20Jo%C3%A3o%20Paulo%20II%20-%20Uruguai%2C%20Salvador%20-%20BA%2C%2040470-236!5e0!3m2!1spt-BR!2sbr!4v1737212113090!5m2!1spt-BR!2sbr">
+                </iframe>
+            </div>
+        </div>
+
+    Outra forma de colocar um video e a tag <video src=""></video> é específica para exibir vídeos
+        neste exemplo vc já esta vendo uma exterização já dentro da tag mas eu posso colocar uma class 
+        ou uma id e puxar no css.
+
+        Exemplo:
+        <video 
+        src="./video/WIN_20211227_16_41_20_Pro.mp4"
+        width="320"
+        height="240"
+        type="video/mp4"
+        controls > e inportante para roda o video se não vai ficar parecendo uma imagen
+        ></video>
+
+-->
+</body>
+
+<body Tag header, nav, footer, main>
+<!-- 
+    A tag header Representa a cabeçalho de uma página e na onde vc coloca o titulo da pagina, logotipos,
+        menus principais ou informações introdutórias.
+
+        exemplo: 
+        <header>
+            <h1>Título da Pagina</h1>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Sobre</li>
+                    <li>Contato</li>
+                </ul>
+            </nav>
+        </header>
+    
+    A tag nav e uma área de navegação, usada para menus que ajudam a navegar no site. 
+
+        exemplo: 
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    
+    A tag main representa o conteúdo principal de uma página da web.
+        Ela é usada para indicar a área que contém o conteúdo mais importante e exclusivo da página.
+
+        exemplo: 
+        <main>
+            <h1>Bem-vindo ao Blog</h1>
+            <article>
+                <h2>Postagem 1</h2>
+                <p>Este é o conteúdo principal da postagem 1.</p>
+            </article>
+            <article>
+                <h2>Postagem 2</h2>
+                <p>Este é o conteúdo principal da postagem 2.</p>
+            </article>
+        </main>
+
+    A tag footer e o rodapé da página.
+
+        <footer>
+            <p>Roda pé da página</p>
+            <nav>
+                <ul>
+                    <li><a href="#privacidade">Política de Privacidade</a></li>
+                    <li><a href="#termos">Termos de Uso</a></li>
+                </ul>
+            </nav>
+        </footer>
+    -->
+</body>
+
+<body Tag section, article, aside>
+<!--
+    Estas tags são boas para organizar a pagina e cada uma delas tem um propósito específico, 
+        que ajuda a dividir a página de forma lógica e compreensível tanto para desenvolvedores 
+        quanto para ferramentas como motores de busca e leitores de tela como o google.
+
+
+    tag <section>: Agrupa conteúdo relacionado por tema e pode conter outras tags como 
+        <article>, mas não necessariamente precisa ser independente.
+    tag <article>: Representa um conteúdo que é completo e pode ser lido de forma independente.
+    tag <aside>: Representa conteúdo complementar, mas não essencial ao entendimento da página principal.
+
+
+    A tag section e para separar conteudo principais do seu saite.
+        exemplo: conteudo como Introdução, Serviços, Contato. 
+        <section>
+            <h2>Introdução</h2>
+            <p>Bem-vindo ao nosso site! Aqui você encontra informações sobre nossos serviços.</p>
+        </section>
+
+        <section>
+            <h2>Serviços</h2>
+            <p>Oferecemos uma ampla gama de serviços para atender às suas necessidades.</p>
+        </section>
+
+        <section>
+            <h2>Contato</h2>
+            <p>Entre em contato conosco pelo formulário abaixo.</p>
+        </section>
+
+    A tag article é usado para representar um conteudo independente da pagina e um conteudo comple 
+        que vc não precisa ler outros conteudo dentro do saite para entender ele.
+
+        Exemplo: de duas noticias
+        <article>
+            <h2>Notícia 1</h2>
+            <p>Detalhes da primeira notícia...</p>
+        </article>
+        <article>
+            <h2>Notícia 2</h2>
+            <p>Detalhes da primeira notícia...</p>
+        </article>
+
+    A tag aside é usada para representar conteúdo secundário ou complementar, mas que não 
+        faz parte do conteúdo principal de uma página, como anúncios, links relacionados, 
+        citações, ou uma barra lateral.
+
+        Exemplo: informa outros conteudos que se parece com o conteudo principal que vc esta lendo.
+        <article>
+            <h2>Postagem no Blog</h2>
+            <p>Este é o conteúdo principal do blog...</p>
+            <aside>
+                <h3>Leia também:</h3>
+                <ul>
+                    <li><a href="#">Artigo relacionado 1</a></li>
+                    <li><a href="#">Artigo relacionado 2</a></li>
+                </ul>
+            </aside>
+        </article>
+
+    -->
+</body>
+
+<body Adicionar um audio tag audio>
+<!--
+        <audio src=""></audio>
+
+    Esta tega coloca ali um audio no sua pagina, bem simples. 
+
+        exemplo: 
+        <audio 
+            controls > e muito inportante para aparecer na tela 
+            src="" 
+            type="audio/mp3"
+        ></audio>
+-->
+</body>
+
+<body maxlength, autofocus, placeholder, Required, autocomplete>
+   <!-- 
+    maxlength=""
+        ele adiciona limites de dijitação neste exemplo a baixo vc so pode digitar 4 caracteres
+        
+        Exemplo: o usuario so vai pode digitar 4 caracteres e muito usado em aplicativo de banco 
+            para colocar senha com numero com regras de quantidade de caracteris.
+
+            <input type="text" nume="usuario" placeholder="Nome de usuario:" autofocus maxlength="4">
+
+    autofocus 
+        ele faz que, quando vc entra na pagina ele altomaticamente já seleciona o input para vc digitar
+            e mais usado em paginas de login e também no google quando vc abri uma nova aba ele já entra 
+            no input de pesquisa. 
+
+            Exemplo:
+            <input type="text" nume="usuario" placeholder="Nome de usuario:" autofocus maxlength="4">
+    
+    placeholder 
+        e o nome que vai ficar dentro do input informando o que vc vai digitar dentro do input. 
+
+            Exempo: 
+            <input type="text" nume="usuario" placeholder="Nome o nome do usuario:" autofocus maxlength="4">
+    
+    Required 
+        ele obriga o usuario a preencher o input. 
+
+        Exemplo: Ele e obrigado a preencher a senha se não preencher ele não conseque entra no saite.
+            <input type="password" nume="senha" placeholder="Digite sua senha" required>
+
+    autocomplete
+        quando vc clica em cima ele já mostra sujestoes ou preencher automaticamente valores previamente 
+        inseridos pelo usuário como a senha e usuario que foi salva no navegador.
+
+        Exempo: Neste ele esta ativo mas se quiser desativar no seu saite e so coloca OFF
+            <input type="password" nume="senha" placeholder="Digite sua senha" required autocomplete="on">
+    --> 
+</body>
+
+<body Meta tag e social sharing>
+    
+
+
+</body>
+
+<body Lista Avançado>
+    
+    Asunto ol, ul, dl. 
+
+    ol  >   Representa uma lista ordenada.
+            Os itens são numerados ou seguem uma sequência definida.
+            Cada item da lista é colocado dentro de uma tag <li> (list item).
+
+        Exemplo: 
+            <ol>
+                <li>Primeiro item</li>
+                <li>Segundo item</li>
+                <li>Terceiro item</li>
+            </ol>
+    
+    ul  >   Representa uma lista não ordenada.
+            Os itens não têm uma sequência ou ordem específica.
+            Por padrão, os itens aparecem com marcadores com bolinhas pequenas do lado.
+            Cada item também é colocado dentro de uma tag <li> (list item).
+
+        Exemplo: 
+            <ul>
+                <li>Item A</li>
+                <li>Item B</li>
+                <li>Item C</li>
+            </ul>
+
+    dl  >   Representa uma lista de descrição, onde cada termo é associado a uma descrição.
+            É composta pelas tags:
+                dt > (description term): Define o termo (o que está sendo descrito).
+                dd > (description details): Define a descrição ou detalhamento do termo.
+
+            Exemplo: 
+            <dl>
+                <dt>HTML</dt>
+                <dd>Uma linguagem de marcação usada para criar páginas da web.</dd>
+                
+                <dt>CSS</dt>
+                <dd>Uma linguagem de estilo usada para definir a aparência de páginas da web.</dd>
+            </dl>
+
+            Resultado: 
+            HTML
+            Uma linguagem de marcação usada para criar páginas da web.
+
+            CSS
+            Uma linguagem de estilo usada para definir a aparência de páginas da web.
+              
+</body>
+
+<body citação Tag blockquote >
+<!--
+    <blockquote></blockquote>
+
+    Esta tag ele cita informação deste texto de uma outra fonte, que pode ser feita no texto.  
+    E tem o atributo cite ele informa a origem da citação e pode ser usado para fins de referência 
+        ou acessibilidade.
+    
+    Exemplo básico: 
+        <blockquote>
+            "A persistência é o caminho do êxito." — Charles Chaplin
+        </blockquote>
+
+    Com o atributo cite:
+        <blockquote cite="https://example.com/frases">
+            "Se você quer viver uma vida feliz, amarre-se a uma meta, não às pessoas ou coisas." — Albert Einstein
+        </blockquote>
+        
+        Embora o atributo cite não seja visível diretamente no navegador, ele informa a origem da citação e pode 
+        ser usado para fins de referência ou acessibilidade.
+    
+-->
+</body>
+
+<body address >
+<!--
+    <address></address>
+
+    A tag <address> é usada para fornecer informações de contato ou autoria de um conteúdo, 
+        como endereço físico, e-mail, número de telefone ou outros dados relevantes. 
+        Ela é uma tag semântica que ajuda a identificar esse tipo de informação no HTML.
+
+    Características importantes:
+        Semântica: O <address> informa ao navegador e a ferramentas de acessibilidade que o 
+            conteúdo dentro da tag é relacionado a informações de contato ou autoria.
+        
+        Flexibilidade: Pode conter links, números de telefone, e-mails e até mapas.
+
+
+    A tag e bastante usada no <header>, <footer>. 
+
+    Exemplo básico:
+        <address>
+            <p>Empresa XYZ</p>
+            <p>Rua Exemplo, 123</p>
+            <p>Cidade, Estado - 12345-678</p>
+            <p>Email: <a href="mailto:contato@empresa.com">contato@empresa.com</a></p>
+            <p>Telefone: <a href="tel:+5511999999999">+55 (11) 99999-9999</a></p>
+        </address>
+        
+    Exemplo no <footer>:
+        <footer>
+            <address>
+                <p>Entre em contato:</p>
+                <p>Email: <a href="mailto:suporte@site.com">suporte@site.com</a></p>
+                <p>Telefone: <a href="tel:+551133333333">+55 (11) 3333-3333</a></p>
+            </address>
+        </footer>
+--> 
+</body>
+
+<body figure, figcaption>
+<!--  
+    a tag figure e usado para agrupar conteudo visual ou gráfico como uma imagem, vídeo, diagrama ou até código. 
+    a tag figcaption e usado para colocar uma legenda. 
+
+    Elas são semânticas e ajudam a melhorar a acessibilidade e a estrutura do conteúdo.
+
+    Exemplo: 
+        <figure>
+            <img src="./imagens/imagen2.jpg" alt="">
+            <figcaption>Uma borboleta</figcaption>
+        </figure>
+
+    Neste exemplo:
+        A tag <figure> agrupa a imagem e a legenda.
+        A tag <figcaption> descreve a imagem para contexto adicional.
+-->
+</body>
+
+<body >
+    
+
+</body>

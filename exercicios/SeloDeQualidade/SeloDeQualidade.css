@@ -1,0 +1,18 @@
+  /* Selo (ribbon) diagonal */
+.selo {
+    position: absolute;
+    top: 40px;        /* afasta do topo */
+    left: -100px;     /* empurra para a direita, fazendo a diagonal */
+    width: 300px;     /* largura da faixa */
+    text-align: center;
+    padding: 12px;
+    background: #2a76bf;         /* cor de fundo */
+    color: #fff;                 /* cor do texto */
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    border: 2px solid #fff;      /* borda branca */
+    box-shadow: 5px rgba(0,0,0,0.2);
+    transform: rotate(-45deg);    /* inclina o selo */
+    transform-origin: center;    /* ponto de rotação no centro */
+}

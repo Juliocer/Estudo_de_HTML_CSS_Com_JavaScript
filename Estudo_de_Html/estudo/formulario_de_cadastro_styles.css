@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 30px;
+}
+
+div {
+    margin: 15px 0 10px 0;
+}
+
+label {
+    font-size: 18px;
+    
+}
+
+input[type=text], textarea{
+    padding: 10px;
+    width: 400px;
+    font-size: 15px;
+    outline: 0;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+.selecioneAsTecnologia{
+    margin: 5px 0 15px 0;
+}
+
+.nomeDaTecnologia {
+    padding: 5px;
+}
+
+select {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    width: 100px;
+    text-align: center;
+    margin-left: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.butoes {
+    margin-left: 50px;
+}
+button[type=reset] {
+    margin-left: 10px;
+}
+button {
+    padding: 5px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+button:hover {
+    background-color: #ddd;
+}
