@@ -1413,5 +1413,235 @@ document.querySelector('#botao').addEventListener('click', clicou);
             document.querySelector('#inserir').addEventListener('click', inserir);
 */
 
+/*Exercicios de Inserir um post 
+async function readPosts() {
+    let postArea = document.querySelector('.post');
+    postArea.innerHTML = 'Carregando...';
+
+    let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    let json = await response.json();
+
+    if(json.length > 0){
+        postArea.innerHTML = '';
+
+        for(let i in json){
+            let postHtml = `<div><h1>${json[i].title}</h1>${json[i].body}<hr/></div>`;
+            postArea.innerHTML += postHtml;
+        }
+    } else {
+        postArea.innerHTML = 'Nenhum post para exibir';
+    }
+}
+
+
+async function addNewPost(title, body) {
+    await fetch(
+        'https://jsonplaceholder.typicode.com/posts',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title,
+                body,
+                userId: 2
+            })
+        }
+    );
+
+    document.querySelector('#titleField').value = '';
+    document.querySelector('#bodyField').value = '';
+
+    readPosts();
+}
+
+document.querySelector('#insertButton').addEventListener('click', () => {
+    let title = document.querySelector('#titleField').value;
+    let body = document.querySelector('#bodyField').value;
+
+    if(title && body){
+        addNewPost(title, body);
+    } else {
+        alert("Preencha todos os campos"); 
+    }
+});
+
+readPosts();
+
+// Trecho do HTML
+
+<h1>Blog Fake</h1>
+
+   <fieldset>
+    <legend>Inserir um novo post</legend>
+
+    <div>
+        <input id="titleField" type="text" placeholder="Titulo do post">
+    </div>
+    <div>
+        <textarea id="bodyField"></textarea>
+    </div>
+    <div>
+        <button id="insertButton">Inserir</button>
+    </div>
+   </fieldset>
+
+   <div class="post"></div>
+
+    <script src="./assets/js/script.js"></script>
+
+*/
+
+/* Métodos String
+let nome = 'Julio Cesar Santos Franco';
+
+// let resultado = nome.length; e para verificar quantas caracteris foram digitados e pega também o espasamento
+// let resultado = nome.indexOf('a') e para informa a posição das letras, palavras formadas e espaçamento do texto, 
+    //mas e bem usado para pesquisar se uma letra ou uma palavra tem na quele texto.  
+// let resultado = nome.slice(0, 10); e para pegar os caracteris pelo pasoção dele. 
+// let resultado = nome.substring(-5, -10); vc conseque pegar o caracteris pela posição, colocar um numero negativo vc pega de tras para frente o caracteris. 
+
+// let resultado = nome.replace('Julio', 'Franco'); // ele muda o nome no texto, neste exemplo eu mudei o Julio para o Franco. 
+// let resultado = nome.toUpperCase(); // Coloca o texto todo em maiusculo.
+// let resultado = nome.toLowerCase(); // Coloca o texto todo em minusculo. 
+// let resultado = nome.trim(); // ele retira o espaços no inicio e fim da string.
+        // Retira o espaço no meio do texto
+//const regex = /\s{2,}/g; // Significa "dois ou mais espaços em branco".E o g Substitui todos os espaços extras encontrados na string. 
+//let resultado = nome.trim().replace(regex, " "); // retira o espaço no meio da string do texto. 
+
+// let resultado = nome.charAt(3); // ele informa o caracteris pela posição.
+// let resultado = nome.split(' '); // ele transforma em array o texto dividindo pelo espaço entre o texto. 
+
+console.log(resultado);
+
+*/
+
+/* Métodos Number
+let n = 10;
+
+// let res = n.toString(); // Converte um número para string.
+// let res = n.toFixed(2) // arredonda para duas casas decimais, se quiser mas casa e só mudar o 2 dentro das ().
+// let res = parseInt(n); // Converte para número inteiro.
+// let res = parseFloat(n); // Converte para número decimal (ponto flutuante)
+console.log(res);
+*/
+
+/* Métodos de Arrays
+
+let lista = ['Ovo', 'Farinha', 'Corante', 'Massa'];
+let lista2 = ['Prato', 'Liquidificador', 'Forno'];
+let lista = [45, 9, 16, 25];
+
+
+let res = lista.toString(); // Converte o Array em uma string.
+let res = lista.join('-'); // Junta os elementos em uma string, separando por um caractere específico, que vc colocar dentro do ().
+let res = lista.indexOf('Farinha'); // Retorna a posição de um item no array. Se o item não for encontrado, retorna -1.
+
+lista.pop(); // Remove o último item do array.
+lista.shift(); // Remove o primeiro item do array.
+lista.push('Prato'); // Adiciona um item no final do array.
+lista[0] = 'Ovos'; // esta alterando o promeiro item selecionando ele diretamente
+
+lista.splice(1, 1); // Remove, o primeiro numero e a Posição onde a alteração começa, e o segundo a quantidade de Números de elementos a serem removidos a parte da posição.
+let res = lista.concat(lista2); // Juntar Dois Arrays, não altera os arrays originais, ele cria um novo array com os valores combinados.
+lista.sort(); // Ordenar em Ordem Alfabética.
+lista.reverse(); // ele Inverter  o array esta em ordem alfabetica agoara esta ao contrario da ordem Alfabética.
+
+
+let lista2 = [];
+
+// O map ele esta percorrendo todo o array, pegando cada numero e multiplicando e armazenando no lista2.
+lista2 = lista.map(function(item) {
+    return item * 2
+})
+
+// O filter ele esta filtra os item neste exemplo que esta selecionando os item que são maiores que 20. 
+lista2 = lista.filter(function(item){
+    if(item > 20){
+        return true;
+    }else {
+        return false;
+    }
+    
+    // simplificando o if/else, mas simples.
+    return (item > 20)? true : false;
+});
+
+// O every() só retorna true se TODOS os itens passarem na condição, Se um único item falhar, ele retorna false.
+lista2 = lista.every(function(item){
+    if(item > 20){
+        return true;
+    }else {
+        return false;
+    }
+    
+    // simplificando o if/else, mas simples. 
+    return (item > 10)? true : false;
+})
+
+// O some() retorna true se PELO MENOS UM item passar na condição, se nenhum item atender à condição, ele retorna false.
+lista2 = lista.some(function(item){
+    if(item > 20){
+        return true;
+    }else {
+        return false;
+    }
+
+    // simplificando o if/else, mas simples. 
+    return (item > 10)? true : false;
+})
+
+
+let lista = [45, 9, 16, 25];
+let lista2 = [];
+
+// find esta buscando o item no array, se o item não for encontrado, retorna undefined. 
+lista2 = lista.find(function(item){
+   return (item == 16)? true : false;
+});
+
+    // Outro exemplo
+    let listaDePessoas = [
+        {id:1, nome:'Julio', sobrenome:'Cesar'},
+        {id:2, nome:'Paulo', sobrenome:'F'},
+        {id:3, nome:'Fulano', sobrenome:'S'}
+    ]
+
+    let pessoa = listaDePessoas.find(function(item){
+        return (item.nome == 'Fulano') ? true : false;
+    });
+
+    let resultado = pessoa;
+    console.log(resultado);
+
+// ele esta buscando a posição do array que esta aquele item, se o item não for encontrado, retorna -1.
+lista2 = lista.findIndex(function(item){
+    return (item == 16)? true : false;
+});
+
+let res = lista2;
+
+console.log(res);
+
+*/
+
+let d = new Date();
+
+// console.log(d.toDateString());
+// console.log(d.toUTCString());
+// let novoValor = d.getFullYear(); // retorna o ano
+// let novoValor = d.getMonth(); // retor na o mês, no javaScript a contagem do mês começa com 0 então janeiro e 0.
+// let novoValor = d.getDay(); // Retorna o dia da semana, semana no javaScript começa no domingo e com numero 0. 
+// let novoValor = d.getDate(); // Retorna o dia do mês
+// let novoValor = d.getHours(); // retorna a hora
+// let novoValor = d.getMinutes(); // Retorna os munitos
+// let novoValor = d.getSeconds(); // retorna os segundos
+// let novoValor = d.getMilliseconds(); // Retorna os milisegundos
+
+d.setDate(d.getDate() + 3);
+
+let novoValor = d;
+console.log( novoValor );
 
 
