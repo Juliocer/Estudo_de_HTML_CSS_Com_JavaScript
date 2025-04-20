@@ -233,18 +233,15 @@ Principais pontos:
             const Soma = (x, y) => {
                 return x + y;
             }
-
             let resultado = Soma(10, 5);
             console.log(resultado);
     
     // Exemplo 2: Colocar o sobrenome  
                 const sobrenome = sub => `Júlio ` + sub;
-
                 console.log(sobrenome('César'));
 
     // Exemplo 3: Outra forma de colocar o sobrenome com Arrow Function
                 const sobrenome = (sub) => `Júlio ` + sub;
-
                 console.log(sobrenome('César'));
 */
 
@@ -1626,6 +1623,7 @@ console.log(res);
 
 */
 
+/* Manipulando Data
 let d = new Date();
 
 // console.log(d.toDateString());
@@ -1639,9 +1637,512 @@ let d = new Date();
 // let novoValor = d.getSeconds(); // retorna os segundos
 // let novoValor = d.getMilliseconds(); // Retorna os milisegundos
 
-d.setDate(d.getDate() + 3);
+// Manipulando a data
+d.setDate(d.getDate() + 6); // dicionando 6 dias à data atual
+d.setHours( d.getHours() + 20); // Adicionando 20 horas à data atual
 
-let novoValor = d;
-console.log( novoValor );
+// Exibindo a Data Atual Formatada
+const dataAtual = new Date();
+const dataFormatada = dataAtual.toLocaleDateString('pt-BR', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+});
+console.log(dataFormatada); // Exemplo: "sábado, 29 de março de 2025"
+
+//let novoValor = d;
+//console.log( novoValor );
+
+Bibliotecas pupulares para manipular o Data: date-fns e o Day.js
+
+*/
+
+/* Manipulando a Matematica 
+
+// let novoValor = Math.round(2.30); // Arredonda para o inteiro mais próximo (2 neste caso).
+// let novoValor = Math.floor(3.59); // Arredonda para baixo, removendo as casas decimais (fica 3).
+// let novoValor = Math.ceil(3.05); // Arredonda para cima (fica 4).
+// let novoValor = Math.abs(-9.65464); // Retorna o valor absoluto, ou seja, remove o sinal negativo (fica 9.65464).
+// let novoValor = Math.min(7, 100, 3, 200); // Retorna o menor número da lista (neste caso, 3).
+// let novoValor = Math.max(100, 50, 45, 250); // Retorna o maior número da lista (neste caso, 250).
+// let novoValor = Math.random(); // Retorna um número aleatório entre 0 e 1 (exemplo: 0.578932).
+// let novoValor = Math.floor(Math.random() * 100); // Gera um número aleatório entre 0 e 99 e arredonda para baixo.
+
+console.log(novoValor);
+*/
+
+/* Manipulando as horas com setInterval, clearInterval e setTimeout
+
+setInterval();
+O que faz?
+    Executa uma função repetidamente em um intervalo de tempo definido.
+    O código dentro da função será chamado infinitamente até que seja parado com clearInterval.
+
+    Sintaxe: 
+        setInterval(function, tempo_em_milissegundos);
+
+clearInterval();
+O que faz?
+    Para um setInterval em execução.
+    Precisa do ID do intervalo, que é retornado quando chamamos setInterval.
+
+    Sintaxe: 
+        clearInterval(timer);
+
+setTimeout();
+O que faz?
+    Executa uma função após um tempo determinado, mas apenas uma vez.
+    Diferente do setInterval, que repete continuamente, o setTimeout ocorre somente uma vez.
+
+    Sintaxe: 
+        setTimeout(function, tempo);
+
+Exemplo: 
+    let timer;
+
+    function comecar(){
+        timer = setInterval(showTime, 1000);
+        // `setInterval` chama a função `showTime` a cada 1000ms (1 segundo), atualizando a hora na tela.
+    }
+
+    function parar(){
+        clearInterval(timer); 
+        // `clearInterval` interrompe a execução do `setInterval`, parando a atualização do relógio.
+    }
+
+    function showTime() {
+        let d = new Date();
+        let h = d.getHours();
+        let m = d.getMinutes();
+        let s = d.getSeconds();
+        let txt = h+':'+m+':'+s;
+
+        document.querySelector('.demo').innerHTML = txt;
+    }
+
+    // `setTimeout` executa a função apenas uma vez após o tempo especificado (2000ms = 2s)
+    setTimeout(function() { 
+    alert('Rodou!')
+    }, 2000);
+
+*/
+
+/* Templete string
+// Template String é uma forma de montar frases no JavaScript usando crases, 
+// onde você pode colocar variáveis direto no meio do texto com ${} sem precisar ficar usando + pra juntar tudo.
+
+let nome = 'Júlio';
+let idade = 23;
+
+let frase = `Meu nome é ${nome} e eu tenho ${idade} anos.`
+
+console.log(frase);
+*/
+
+/* Desconstruindo o Objeto
+
+O que é desconstrução de objeto (ou "destructuring")?
+    É uma forma de extrair valores de objetos (ou arrays) e armazenar em 
+    variáveis de forma mais rápida e limpa.
 
 
+let pessoa = {
+    nome: 'Júlio',
+    sobrenome: 'César',
+    idade: 23,
+    social: {
+        facebook: 'julio.facebook',
+        instagram: {
+            url:'@Julio',
+            seguidores:1000
+        }
+    },
+    nomeCompleto: function() {
+        return `${this.nome} ${this.sobrenome}`
+    }
+};
+
+//Como pegar o conteudo dentro de um Array de um dentro do objeto.
+//let { nome, idade, sobrenome, social:{facebook, social:{instagram:{url, seguidores}} } } = pessoa;
+
+// 1️⃣ Pegando nome e sobrenome (jeito tradicional)
+function pegarNomePessoa(obj){
+    let nome = obj.nome;
+    let sobrenome = obj.sobrenome;
+    return`${nome} ${sobrenome}`;
+}
+console.log(pegarNomePessoa(pessoa));
+
+// 2️⃣ Usando destructuring direto nos parâmetros: Pegando nome e sobrenome
+function pegarNomePessoa({nome, sobrenome}){
+    return`${nome} ${sobrenome}`;
+}
+console.log(pegarNomePessoa(pessoa));
+
+// 2️⃣ Desconstruindo aninhado (nível avançado!): Pegando url e seguidores
+function pegarSocial({social:{instagram:{url, seguidores}}}){
+    return `${url} ${seguidores}`
+}
+console.log(pegarSocial(pessoa));
+*/
+
+/* Descontruindo Arrays
+
+Desconstrução de arrays é uma forma prática de extrair valores de um array e atribuí-los a 
+variáveis individuais de forma simples e legível.
+
+💡 Vantagens:
+    Código mais limpo e legível
+    Menos linhas para extrair dados de arrays
+    Facilita o uso em funções e retornos de APIs
+
+🛠️ Sintaxe básica:
+    let [var1, var2] = ['valor1', 'valor2'];
+
+
+let info = ['Julio Cesar', 'Cesar', 'Franco', '@Santos'];
+✅ Pegando o primeiro item:
+let [a] = info;
+console.log(a);
+
+✅ Pulando itens:
+let [, , terceiro] = info;
+console.log(, , terceiro); // "Franco"
+
+✅ Pegando o resto com ... (rest operator):
+let [primeiro, ...resto] = info;
+console.log(primeiro);  // "Julio Cesar"
+console.log(resto);     // ["Cesar", "Franco", "@Santos"]
+
+✅ Dentro de funções:
+function mostrar([nome, sobrenome]) {
+    return `Nome completo: ${nome} ${sobrenome}`;
+}
+console.log(mostrar(['Julio', 'Cesar'])); // Nome completo: Julio Cesar
+
+
+let [nome, sobrenome] = ['Julio', 'Cesar'];
+console.log(nome, sobrenome);
+
+*/
+
+/* Operador Spread
+O spread (...) é usado para espalhar os elementos de arrays, objetos ou strings.
+
+✅ 1. Spread com Arrays
+let array = ['Julio'];
+let novoArray = [...array, 'Cesar', 'Santos', 'Franco'];
+console.log(novoArray); 
+// Resultado: ['Julio', 'Cesar', 'Santos', 'Franco'];
+
+✅ 2. Spread com Objetos
+let info =  {
+    Nome: 'Julio'
+}
+let novaInfo = {
+    ...info,
+    sobrenome: 'Cesar',
+    idade: 23
+}
+console.log(novaInfo);
+// Resultado: { Nome: 'Julio', sobrenome: 'Cesar', idade: 23 };
+
+✅ 3. Spread dentro de uma função
+function adicionaInfo(info){
+    let novaInfo = {
+        ...info,
+        status:0,
+        token: 'sdnmvslkjv',
+        data_cadastro: '...'
+    };
+    return novaInfo;
+}
+console.log(adicionaInfo({nome:'Julio', sobrenome:'Cesar', idade:23}));
+Resultado esperado no console.log:
+    {
+        nome: 'Julio',
+        sobrenome: 'Cesar',
+        idade: 23,
+        status: 0,
+        token: 'sdnmvslkjv',
+        data_cadastro: '...'
+    }
+
+*/
+
+/* Operador Rest
+O Rest (...) serve para juntar argumentos ou itens restantes em um array.
+
+Dica pra memorizar:
+    Rest = junta os restos (em arrays).
+    Spread = espalha os itens (de arrays ou objetos).
+
+🔄 REST vs SPREAD
+            REST                               | SPREAD
+Conceito	REST ... (Juntar)                  | SPREAD ... (Espalhar)
+Uso comum	Em parâmetros de função	           | Em arrays e objetos para clonagem/composição
+Objetivo	Juntar vários valores em um array  | Espalhar itens de um array ou objeto
+Exemplo	    function somar(...numeros) {}      | let novoArray = [...arrayAntigo, 4, 5]
+Resultado	...numeros vira um array com os 
+            argumentos	                       | ...arrayAntigo insere cada item separadamente
+
+✅ Como funciona:
+1. Juntando parâmetros em uma função
+    function adicionar(...numero){
+        console.log(numero);
+    }
+    adicionar(5, 6, 7, 8, 9, 10);
+
+2. Usando Rest com outros parâmetros fixos
+    function adicionarNovosNomes(nomes, ...novosNomes){
+        let novoConjunto = [
+            ...nomes, 
+            ...novosNomes
+        ];
+        return novoConjunto;
+    }
+    let nomes = ["Júlio", "Pedro"];
+    let novosNomes = adicionarNovosNomes(nomes, "Antonio", "Maria", "José");
+    
+    console.log(novosNomes);
+    // saída: ["Júlio", "Pedro", "Antonio", "Maria", "José"]
+
+2. Outro exemplo mas simples usando Rest com outros parâmetros fixos
+    function adicionarNovosNomes(nomes, ...novosNomes) {
+        return [...nomes, ...novosNomes];
+    }
+
+    let nomes = ["Júlio", "Pedro"];
+    let novosNomes = adicionarNovosNomes(nomes, "Antonio", "Maria", "José");
+
+    console.log(novosNomes);
+    // saída: ["Júlio", "Pedro", "Antonio", "Maria", "José"]
+
+*/
+
+/* includes, repeat
+includes() → Verifica se o valor existe no array.
+repeat() → Repete a string o número de vezes que você quiser.
+
+let lista = ['ovo', 'café', 'arroz', 'feijão', 'macarrão'];
+// includes() → Verifica se o valor existe no array. 
+console.log(lista.includes('farinha'));
+
+// repeat() → Repete a string o número de vezes que você quiser., neste caso o x 10 vezes.
+console.log('x'.repeat(10));
+
+// usando uma variavel
+let nome = 'Julio';
+console.log( nome.repeat(2));   
+
+*/
+
+/* Objeto, Array: Key, Values e Entries
+
+Os métodos Object.keys(), Object.values() e Object.entries():
+permite armazenar e acessar dados de forma estruturada.
+
+// Para Arrays:
+let lista = ['ovo', 'macarrão', 'feijão', 'pipoca'];
+console.log(Object.keys(lista)); // ['0', '1', '2', '3'] → posições (índices); 
+console.log(Object.values(lista)); // ['ovo', 'macarrão', 'feijão', 'pipoca'] → conteúdos;
+console.log(Object.entries(lista)); // [['0','ovo'], ['1','macarrão'], ...] → pares [índice, valor];
+
+
+// Para Objetos:
+let pessoa ={
+    nome: 'julio',
+    sobrenome: 'cesar',
+    idade: 23
+};
+console.log(Object.keys(pessoa)); // ['nome', 'sobrenome', 'idade'] → chaves ;
+console.log(Object.values(pessoa)); // ['julio', 'cesar', 23] → valores ;
+console.log(Object.entries(pessoa)); // [['nome','julio'], ['sobrenome','cesar'], ['idade', 23]] → pares [chave, valor];
+
+*/
+
+/* mascarar informações sensíveis, padStart, padEnd e slice. 
+let telefone = '71986277091';
+
+console.log(telefone.padEnd(9, '*'));
+console.log(telefone.padStart(9, '*'));
+
+let cartao = '123123412341234';
+
+let lastDigits = cartao.slice(-4);      // "1234" (últimos 4 dígitos)
+let lastDigitsEnd = cartao.slice(0, 4); // "1231" (primeiros 4 dígitos)
+
+let cartaoMascarado = lastDigits.padStart(16, '*')      // Resultado: "************1234"
+let cartaoMascaradoEnd = lastDigitsEnd.padEnd(16, '*'); // Resultado: "1231************"
+
+console.log('Este é o seu cartão ' + cartaoMascarado);    // Este é o seu cartão ************1234
+console.log('Este é o seu cartão ' + cartaoMascaradoEnd); // Este é o seu cartão 1231************
+
+*/
+
+/* ------------//////////////////------------//////////////---------/////////////-------/// */
+
+/* Requisições e assíncronismo */
+
+/* JSON.parse, JSON.stringify
+
+Esse método converte uma string (texto) que está no formato JSON em um objeto JavaScript real.
+    let pessoa = JSON.parse('{"nome": "Julio", "idade": 23}');
+    Resultado:
+        console.log(pessoa.nome);   // "Julio"
+        console.log(pessoa.idade);  // 23
+
+// Esse método converte um JSON para um formato String.
+    let json = JSON.stringify(pessoa);
+    console.log(json);
+    Resultado: '{"nome":"Julio","idade":23}'
+*/
+
+/* Callbacks com setTimeout()
+function alertar() {
+    console.log("Deu Certo");
+}
+
+let nome = 'Julio';
+setTimeout(alertar, 2000); // Aguarda 2 segundos, depois executa a função alertar
+let sobrenome = 'Cesar';
+console.log(`Nome completo: ${nome} ${sobrenome}.`);
+
+ Vai ser mostrado no console do navegar assim 
+    Nome completo: Julio Cesar.
+    (2 segundos depois)
+    Deu Certo
+*/
+
+/* Promise no portuques Promessa
+
+function pegarTempeatura(){
+    return new Promise(function(resolve, reject){
+        console.log("pegando temperatura...");
+        
+        setTimeout(function(){
+            resolve('40 na sombra');
+        }, 2000);
+    });
+}
+
+// Usando a Promise, quando deu certo 
+console.log("codigo antes!");
+
+let temp = pegarTempeatura();
+
+console.log("código durante!");
+
+temp.then(function(resultado){
+    console.log("Temperatura " +resultado);
+});
+
+// quando deu erro
+temp.catch(function(error){
+    console.log("Deu error!");
+});
+
+console.log("código depois!");
+*/
+
+/* fetch
+
+fetch fetch é uma função do JavaScript usada para fazer requisições HTTP 
+ (como GET, POST, PUT, DELETE, etc.) a um servidor ou API.
+
+✅ Exemplo simples com GET (buscar dados)
+    fetch('https://api.exemplo.com/posts')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Erro:', error));
+
+📦 Exemplo com POST (enviar dados)
+    fetch('https://api.exemplo.com/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            titulo: 'Meu Post',
+            conteudo: 'Esse é o conteúdo do post.'
+        })
+    })
+        .then(response => response.json())
+        .then(data => console.log('Sucesso:', data))
+        .catch(error => console.error('Erro:', error));
+
+
+Informando quantos posts tem no Servidor salvo 
+    function loadPosts(){
+        document.getElementById("posts").innerHTML = 'Carregando...';
+
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(function(resultado){
+                return resultado.json();
+            })
+            .then(function(json){
+                document.getElementById("posts").innerHTML = json.length+' posts';
+            })
+            .catch(function(error){
+                console.log("Deu Error!");
+            });
+    }
+
+Função para quando vc aperta no botão aparecer na tela dodos os posts. 
+
+    function loadPosts(){
+        document.getElementById("posts").innerHTML = 'Carregando...';
+
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(function(resultado){
+                return resultado.json();
+            })
+            .then(function(json){
+                montarBlog(json); Chamando a função e passando todo os posts. 
+
+                // document.getElementById("posts").innerHTML = json.length+' posts';
+            })
+            .catch(function(error){
+                console.log("Deu Error!");
+            });
+    }
+
+Montando os posts para aparecr na tela
+
+    function montarBlog(lista){
+        let html = "";
+
+        for(let i in lista){
+            html += '<h3>'+lista[i].title+'</h3>';
+            html += lista[i].body+'<br/>';
+            html += '<hr/>';
+        }
+        document.getElementById("posts").innerHTML = html;
+    }
+*/
+
+function loadPosts(){
+    document.getElementById("posts").innerHTML = 'Carregando...';
+
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(function(resultado){
+            return resultado.json();
+        })
+        .then(function(json){
+            montarBlog(json);
+
+            // document.getElementById("posts").innerHTML = json.length+' posts';
+        })
+        .catch(function(error){
+            console.log("Deu Error!");
+        });
+}
+
+function montarBlog(lista){
+    let html = "";
+
+    for(let i in lista){
+        html += '<h3>'+lista[i].title+'</h3>';
+        html += lista[i].body+'<br/>';
+        html += '<hr/>';
+    }
+    document.getElementById("posts").innerHTML = html;
+}
